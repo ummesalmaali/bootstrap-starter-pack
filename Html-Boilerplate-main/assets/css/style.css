@@ -1,0 +1,645 @@
+/*
+--------------------------------------------
+--------------------------------------------
+  Theme Name: .
+  Author: .
+  Description: .
+  Version: 1.0.0
+--------------------------------------------
+--------------------------------------------
+*/
+
+
+/*
+-------------------------------------
+-------------------------------------
+Table of Contents
+
+01.
+02.
+03.
+04.
+-------------------------------------
+-------------------------------------
+*/
+
+html {
+	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	scroll-behavior: smooth;
+}
+
+body {
+	line-height: 1.6;
+	overflow-x: hidden;
+	letter-spacing: .1rem;
+	font-family: sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.logo{
+	width: 200px;
+	height: 50px;
+}
+
+
+/* 
+==================================
+Bacic Setup
+==================================
+*/
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+::-moz-selection {
+	background: var(--color-00);
+	color: var(--secondary-color);
+}
+
+::selection {
+	background: var(--color-00);
+	color: var(--secondary-color);
+}
+
+::-webkit-scrollbar {
+	width: .7rem;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-00);
+	height: 6rem;
+}
+
+a,
+span,
+label {
+	display: inline-block;
+}
+
+ul li {
+	list-style: none
+}
+
+a,
+a:focus {
+	text-decoration: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+button,
+input,
+textarea {
+	outline: 0;
+	border: 0;
+	background-color: transparent;
+}
+
+button {
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+hr {
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	opacity: 1;
+	background-color: transparent;
+}
+
+/* 
+=====================================
+Variables
+=====================================
+*/
+:root {
+	--size-50: 5rem;
+	--size-30: 3rem;
+	--size-25: 2.5rem;
+	--size-18: 1.8rem;
+	--size-16: 1.6rem;
+	--primary-color: #3A3D3E;
+	--secondary-color: #FFFFFF;
+	--color-00: #00AA55;
+	--color-99: #0099FF;
+}
+/* 
+=====================================
+Variables
+=====================================
+*/
+
+
+/* 
+==============================
+Font Size
+==============================
+*/
+.font-size-50 {
+	font-size: var(--size-50);
+}
+
+.font-size-30 {
+	font-size: var(--size-30);
+}
+
+.font-size-25 {
+	font-size: var(--size-25);
+}
+
+.font-size-18 {
+	font-size: var(--size-18);
+}
+
+.font-size-16 {
+	font-size: var(--size-16);
+}
+
+/* 
+=================================
+Font Color
+=================================
+*/
+.text-color-3a {
+	color: var(--primary-color);
+}
+
+.text-color-ff {
+	color: var(--secondary-color);
+}
+
+.text-color-00 {
+	color: var(--color-00);
+}
+
+.text-color-99 {
+	color: var(--color-99);
+}
+
+/* 
+====================================
+Background Color
+====================================
+*/
+.bg-color-3a {
+	background: var(--primary-color);
+}
+
+.bg-color-ff {
+	background: var(--secondary-color);
+}
+
+.bg-color-00 {
+	background: var(--color-00);
+}
+
+.bg-color-99 {
+	background: var(--color-99);
+}
+
+
+/* 
+================================================
+================================================
+Start Reuseble Components
+================================================
+*/
+section {
+	padding: 10rem 0;
+}
+
+.vh-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}
+
+.transition-1 {
+	-webkit-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+
+.transition-2 {
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+/* 
+================================================
+End Reuseble Components
+================================================
+================================================
+*/
+
+
+/* 
+=========================================
+Start Header Section
+=========================================
+*/
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	z-index: 999;
+}
+
+nav .logo img {
+	max-width: 6rem;
+}
+
+nav .main-menu ul li a {
+	font-weight: 700;
+	letter-spacing: .1rem;
+	position: relative;
+}
+
+nav .main-menu ul li a:hover {
+	color: var(--primary-color);
+}
+
+/*------------------
+Animated Underline
+-------------------*/
+nav .main-menu ul li a::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	-webkit-transform: scaleX(0);
+	-ms-transform: scaleX(0);
+	transform: scaleX(0);
+	height: .3rem;
+	background-color: var(--color-00);
+	-webkit-transform-origin: bottom right;
+	-ms-transform-origin: bottom right;
+	transform-origin: bottom right;
+	-webkit-transition: -webkit-transform 0.4s ease-in;
+	transition: -webkit-transform 0.4s ease-in;
+	-o-transition: transform 0.4s ease-in;
+	transition: transform 0.4s ease-in;
+	transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
+}
+
+nav .main-menu ul li a:hover::after {
+	-webkit-transform: scaleX(1);
+	-ms-transform: scaleX(1);
+	transform: scaleX(1);
+	-webkit-transform-origin: bottom left;
+	-ms-transform-origin: bottom left;
+	transform-origin: bottom left;
+}
+
+nav .main-menu ul li:first-child a::after {
+	-webkit-transform: scaleX(1);
+	-ms-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+/*
+--------------------
+Hamburger Menu Btn
+--------------------
+*/
+.menu-show-hide-btn {
+	position: relative;
+	cursor: pointer;
+	z-index: 99999;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+	width: 3.5rem;
+	height: .5rem;
+	background: var(--primary-color);
+	margin: .6rem 0;
+}
+
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	-ms-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-10px, -7px);
+	-ms-transform: rotate(45deg) translate(-10px, -7px);
+	transform: rotate(45deg) translate(-10px, -7px);
+}
+
+/*
+----------------
+Sticky Menu
+----------------
+*/
+.sticky-menu {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+/* 
+=========================================
+End Header Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start Hero Section
+=========================================
+*/
+.hero-title img {
+	width: 17rem;
+	height: 17rem;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: top;
+	object-position: top;
+}
+
+.hero-title a {
+	position: relative;
+	z-index: 1;
+}
+
+.hero-title a:hover {
+	color: var(--secondary-color);
+}
+
+.hero-title a::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	display: block;
+	background: var(--color-00);
+	z-index: -1;
+	-webkit-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+
+.hero-title a:hover::after {
+	width: 100%;
+}
+
+/* 
+=========================================
+End Hero Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+/* 
+=========================================
+Start  Section
+=========================================
+*/
+
+/* 
+=========================================
+End  Section
+=========================================
+*/
+
+
+
+
+/* 
+===============================
+Back to top Btn
+===============================
+*/
+#scroll-up-btn {
+	opacity: 0;
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	z-index: 99999;
+	background: var(--color-99);
+	width: 4.5rem;
+	height: 4.5rem;
+	-webkit-animation: myBtn 3.5s infinite linear;
+	animation: myBtn 3.5s infinite linear
+}
+
+#scroll-up-btn:hover {
+	-webkit-transform: translateY(-.7rem);
+	-ms-transform: translateY(-.7rem);
+	transform: translateY(-.7rem);
+}
+
+@-webkit-keyframes myBtn {
+	0% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	25% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	50% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	75% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	100% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+}
+
+@keyframes myBtn {
+	0% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	25% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	50% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+
+	75% {
+		bottom: 2rem;
+		right: 3rem;
+	}
+
+	100% {
+		right: 3rem;
+		bottom: 4rem;
+	}
+}
